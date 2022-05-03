@@ -23,11 +23,11 @@ class Choose implements ArrayInterface
 
     public function toOptionArray()
     {
-        $option_arr = $this->GetBdCurrency();
+        $optionArr = $this->GetBdCurrency();
         $attributesArrays = array();
-        for ($i = 0; $i < count($option_arr); $i++) {
+        for ($i = 0; $i < count($optionArr); $i++) {
             $attributesArrays[$i] = array(
-                'label' => $option_arr[$i]['cur_code'],
+                'label' => $optionArr[$i]['cur_code'],
                 'value' => $i+1
             );
         }
