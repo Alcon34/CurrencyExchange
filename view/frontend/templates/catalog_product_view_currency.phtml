@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\Exception\NoSuchEntityException;
+use Tsimashkou\CurrencyExchange\Block\CurrencyExchange;
+
+?>
+<div class="currency" data-description="
+<?php
+/**
+ * @var CurrencyExchange $block
+ */
+if ($currentProduct = $block->getCurrentProduct()) try {
+    if ($block->getBdCurrency() == 0) {
+        echo $block->getSettingCode();
+        echo ' ';
+        echo 'none';
+    } else {
+        echo $block->getSettingCode();
+        echo ' ';
+        $rate = $block->getBdCurrency();
+        echo round($currentProduct->getFinalPrice() * (float)$rate, 2);
+    }
+} catch (NoSuchEntityException|LocalizedException $e) {
+}
+
+?>
+"><img width="36" height="36"
+       src="<?php echo $this->getViewFileUrl('Tsimashkou_CurrencyExchange::images/exchange.png'); ?>"/></div>
