@@ -8,7 +8,7 @@ use Magento\Store\Model\ScopeInterface;
 
 class Data extends AbstractHelper
 {
-    protected $_scopeConfig;
+    protected ScopeConfigInterface $_scopeConfig;
     public function __construct(
         ScopeConfigInterface $scopeConfig
     ) {
