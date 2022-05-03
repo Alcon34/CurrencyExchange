@@ -9,11 +9,19 @@ use Magento\Store\Model\ScopeInterface;
 class Data extends AbstractHelper
 {
     protected ScopeConfigInterface $_scopeConfig;
+
+    /**
+     * @param ScopeConfigInterface $scopeConfig
+     */
     public function __construct(
         ScopeConfigInterface $scopeConfig
     ) {
         $this->_scopeConfig = $scopeConfig;
     }
+
+    /**
+     * @return mixed
+     */
     public function getStatus(){
         return $this->_scopeConfig->getValue('currencyexchange/general/choosecurrency', ScopeInterface::SCOPE_STORE);
     }

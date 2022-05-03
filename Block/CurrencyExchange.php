@@ -109,7 +109,7 @@ class CurrencyExchange extends Template
         $id = (int)$s;
         $sql = "SELECT cur_code FROM tsimashkou_exchange_price WHERE id=$id";
         $connection = $this->connection->getConnection();
-        $arrSettingCode= $connection->fetchAll($sql);
+        $arrSettingCode = $connection->fetchAll($sql);
         return $arrSettingCode[0]['cur_code'];
     }
 

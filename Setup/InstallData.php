@@ -18,7 +18,7 @@ class InstallData implements InstallDataInterface
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
 
-
+/*
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -40,6 +40,7 @@ class InstallData implements InstallDataInterface
 
         curl_close($curl);
         //echo $response;
+*/
 
         $installer = $setup;
         $installer->startSetup();

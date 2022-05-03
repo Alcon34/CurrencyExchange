@@ -9,11 +9,17 @@ class Choose implements ArrayInterface
 {
     private ResourceConnection $connection;
 
+    /**
+     * @param ResourceConnection $resourceConnection
+     */
     public function __construct(ResourceConnection $resourceConnection)
     {
         $this->connection = $resourceConnection;
     }
 
+    /**
+     * @return array
+     */
     public function GetBdCurrency(): array
     {
         $sql = 'SELECT cur_code FROM tsimashkou_exchange_price';
@@ -21,7 +27,10 @@ class Choose implements ArrayInterface
         return $connection->fetchAll($sql);
     }
 
-    public function toOptionArray()
+    /**
+     * @return array
+     */
+    public function toOptionArray(): array
     {
         $optionArr = $this->GetBdCurrency();
         $attributesArrays = array();
