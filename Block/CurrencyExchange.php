@@ -22,7 +22,6 @@ class CurrencyExchange extends Template
     /**
      * @param Context $context
      * @param Registry $registry
-     * @param array $data
      * @param ResourceConnection $resourceConnection
      * @param Data $_helper
      * @param StoreManagerInterface $storeManager
