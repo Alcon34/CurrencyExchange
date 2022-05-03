@@ -4,11 +4,11 @@
  * See COPYING.txt for license details.
  */
 
-use Tsimashkou\CurrencyExchange\Block\GetMySQL;
-
-
+use Tsimashkou\CurrencyExchange\Block\Test;
 /**
- * @var GetMySQL $block
+ * @var Test $block
  */
+$e = $block->getCurrencyRate();
+print_r($e);
 
-   var_dump( $block->GetBdCurrency());
+//var_dump($e);

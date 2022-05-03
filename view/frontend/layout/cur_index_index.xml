@@ -13,7 +13,7 @@
 </head>
 <body>
     <referenceContainer name="content">
-        <block class="Tsimashkou\CurrencyExchange\Block\GetMySQL" template="Tsimashkou_CurrencyExchange::main.phtml"/>
+        <block class="Tsimashkou\CurrencyExchange\Block\Test" template="Tsimashkou_CurrencyExchange::main.phtml"/>
     </referenceContainer>
 </body>
 </page>

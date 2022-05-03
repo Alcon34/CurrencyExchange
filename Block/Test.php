@@ -1,22 +1,17 @@
 <?php
 
-namespace Tsimashkou\CurrencyExchange\Cron;
+namespace Tsimashkou\CurrencyExchange\Block;
 
-use Magento\Tests\NamingConvention\true\resource;
+use Magento\Framework\View\Element\Template;
 
-class UpdateRate
+class Test extends Template
 {
-    public function execute() {
-
-
-    }
-
     public function getCurrencyRate()
     {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.apilayer.com/fixer/latest?symbols=symbols&base=usd",
+            CURLOPT_URL => "https://api.apilayer.com/fixer/latest?symbols=&base=USD",
             CURLOPT_HTTPHEADER => array(
                 "Content-Type: text/plain",
                 "apikey: oDu7rJ3O5L0FV7Ea7kH0Rxkn0H16QopB"
@@ -31,8 +26,10 @@ class UpdateRate
         ));
 
         $response = curl_exec($curl);
+
         curl_close($curl);
-        return $response;
+        return  json_decode($response);
+        //return 'sdds';
     }
 
 }
